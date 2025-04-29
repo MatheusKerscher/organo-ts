@@ -9,6 +9,7 @@ const Colaborador = ({
   nomeColaborador,
   imagem,
   cargo,
+  data,
   corDeFundo,
 }: ColaboradorProps) => {
   return (
@@ -19,6 +20,7 @@ const Colaborador = ({
       <div className="rodape">
         <h4>{nomeColaborador}</h4>
         <h5>{cargo}</h5>
+        <h5>{new Date(data).toLocaleDateString()}</h5>
       </div>
     </div>
   );

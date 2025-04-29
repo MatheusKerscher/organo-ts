@@ -13,11 +13,15 @@ type FormularioProps = {
   aoColaboradorCadastrado: (colaborador: IColaborador) => void;
 };
 
-const Formulario = ({timesNomes, aoColaboradorCadastrado}: FormularioProps) => {
+const Formulario = ({
+  timesNomes,
+  aoColaboradorCadastrado,
+}: FormularioProps) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
+  const [data, setData] = useState("");
 
   const aoSalvar = (evento: FormEvent) => {
     evento.preventDefault();
@@ -27,12 +31,14 @@ const Formulario = ({timesNomes, aoColaboradorCadastrado}: FormularioProps) => {
       cargo,
       imagem,
       time,
+      data,
     });
 
     setNome("");
     setCargo("");
     setImagem("");
     setTime("");
+    setData("");
   };
 
   return (
@@ -61,6 +67,14 @@ const Formulario = ({timesNomes, aoColaboradorCadastrado}: FormularioProps) => {
           placeholder="Digite o endereço da imagem"
           valor={imagem}
           aoAlterado={(valor) => setImagem(valor)}
+        />
+
+        <CampoTexto
+          tipo="date"
+          label="Data de ingresso no time"
+          placeholder=""
+          valor={data}
+          aoAlterado={(valor) => setData(valor)}
         />
 
         <ListaSuspensa

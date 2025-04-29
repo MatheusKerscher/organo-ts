@@ -29,6 +29,7 @@ const Time = ({
             nomeColaborador={colaborador.nomeColaborador}
             cargo={colaborador.cargo}
             imagem={colaborador.imagem}
+            data={colaborador.data}
           />
         ))}
       </div>
